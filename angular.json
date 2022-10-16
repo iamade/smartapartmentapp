@@ -102,5 +102,7 @@
       }
     }
   },
-  "defaultProject": "smartapartmentApp"
+  "cli": {
+    "analytics": false
+  }
 }
