@@ -1,0 +1,29 @@
+<div *ngIf="isLoadingApartments"
+class="alert alert primary mt-2 text-center">
+    <h6>Searching</h6>
+    <span>Please wait...</span>
+</div>
+
+<ul class="list-group mt-2" *ngIf="availableDat.length > 0">
+    <li *ngFor="let apartment of availableDat[0].features"
+    class="list-group-item list-group-item-action pointer"
+    [class.active]="apartment.id === selectedId"
+    (click)="flyTo(apartment)"
+    >
+      <div class="topbar">
+        <h6>{{apartment.properties.NAME}}</h6>
+        <button class="btn btn-danger">X</button>
+        
+      </div> 
+        <p>
+            {{apartment.properties.name}}
+        </p>
+
+        <button 
+        class="btn btn-sm "
+        [ngClass]="(apartment.id === selectedId) ? 'btn-outline-light':'btn-outline-primary' "
+        >
+    Directions
+    </button>
+    </li>
+</ul>

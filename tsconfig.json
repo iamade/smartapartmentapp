@@ -18,9 +18,15 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports":true,
+    "esModuleInterop": true,
     "lib": [
       "es2020",
       "dom"
+    ],
+    "types": [
+      "node"
     ]
   },
   "angularCompilerOptions": {

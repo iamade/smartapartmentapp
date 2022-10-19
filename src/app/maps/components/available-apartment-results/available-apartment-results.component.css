@@ -1,0 +1,13 @@
+.topbar{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pointer{
+    cursor: pointer
+}
+
+p {
+    font-size: 12px
+}
+

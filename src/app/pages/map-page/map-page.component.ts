@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
 import * as Mapboxgl from 'mapbox-gl';
+import { HomeData } from 'src/app/shared/home-data.model';
 import { environment } from 'src/environments/environment';
+
+import dbjson from 'src/assets/json/db.json';
 
 @Component({
   selector: 'app-map-page',
@@ -10,6 +13,7 @@ import { environment } from 'src/environments/environment';
 })
 export class MapPageComponent implements OnInit {
 
+homeData: HomeData[] = dbjson
 map!: Mapboxgl.Map
   constructor() { }
 

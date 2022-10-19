@@ -1,0 +1,9 @@
+<app-loading *ngIf="!isUserLocationReady; else mapReady"></app-loading>
+
+<ng-template #mapReady>
+    <app-map-view></app-map-view>
+    <app-my-location-button></app-my-location-button>
+    <app-search-bar></app-search-bar>
+</ng-template>
+
+<app-smart-apartment-data-logo></app-smart-apartment-data-logo>

@@ -1,0 +1,17 @@
+<div class="search-container">
+    <input type="text" class="form-control" 
+    placeholder="find place"
+    #txtQuery
+    (keyup)="onQueryChanged(txtQuery.value)"
+    >
+    <button 
+        class="contain btn btn-sm btn-outline-primary mt-3"
+        (click)="getAvailableApartments()"
+        >
+    Available Apartments
+    </button>
+
+    <app-search-results></app-search-results>
+    <app-available-apartment-results></app-available-apartment-results>
+</div>
+
