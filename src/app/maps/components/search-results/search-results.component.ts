@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Feature } from '../../interfaces/places';
-import { MapService, PlacesService } from '../../services';
+import { ApartmentsService, MapService, PlacesService } from '../../services';
 
 @Component({
   selector: 'app-search-results',
@@ -11,7 +11,7 @@ export class SearchResultsComponent  {
 
   public selectedId: string = '';
 
-  constructor(private placesService: PlacesService, private mapService: MapService ) { }
+  constructor(private placesService: PlacesService, private mapService: MapService, private apartmentService: ApartmentsService ) { }
 
   get isLoadingPlaces(): boolean {
     return this.placesService.isLoadingPlaces;
@@ -27,6 +27,7 @@ export class SearchResultsComponent  {
     this.mapService.flyTo([lng, lat]);
   }
   
+ 
   
  
 }

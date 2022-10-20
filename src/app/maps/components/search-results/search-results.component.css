@@ -6,3 +6,11 @@ p {
     font-size: 12px
 }
 
+.box-style{
+    overflow: scroll
+}
+
+.bottom-btn{
+    display: flex;
+    justify-content: space-between;
+}

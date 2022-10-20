@@ -4,15 +4,19 @@ class="alert alert primary mt-2 text-center">
     <span>Please wait...</span>
 </div>
 
-<ul class="list-group mt-2" *ngIf="availableDat.length > 0">
-    <li *ngFor="let apartment of availableDat[0].features"
+<ul class=" result-container list-group mt-3" *ngIf="apartments.length > 0">
+  <ng-template ngFor let-apartment [ngForOf]="apartments">
+
+ 
+    <li 
     class="list-group-item list-group-item-action pointer"
     [class.active]="apartment.id === selectedId"
     (click)="flyTo(apartment)"
     >
       <div class="topbar">
         <h6>{{apartment.properties.NAME}}</h6>
-        <button class="btn btn-danger">X</button>
+
+        <button class="btn btn-danger" (click)="removeApartmentMarker(apartment.properties.id!)">X</button>
         
       </div> 
         <p>
@@ -26,4 +30,5 @@ class="alert alert primary mt-2 text-center">
     Directions
     </button>
     </li>
+  </ng-template>
 </ul>

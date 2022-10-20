@@ -1,8 +1,9 @@
 .search-container{
-    position: fixed;
+    position: absolute;
     top: 20px;
     left: 20px;
     width: 300px;
+ 
 
     background-color: white;
     border-radius: 5px;
@@ -14,4 +15,7 @@
 .contain{
     display: block;
     margin: auto;
+}
+div.search-container{
+    overflow: auto;
 }

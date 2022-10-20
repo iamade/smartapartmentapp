@@ -11,3 +11,6 @@ p {
     font-size: 12px
 }
 
+.result-container{
+    overflow: auto;
+}

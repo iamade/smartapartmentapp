@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
+import { throws } from 'assert';
+import { Subject } from 'rxjs';
 import { AvailableApartments, Feature } from '../../interfaces/available-apartments';
 import { MapService } from '../../services';
+import { ApartmentsMarkerService } from '../../services/apartments-marker.service';
 import { ApartmentsService } from '../../services/apartments.service';
 
 
@@ -12,35 +15,42 @@ import { ApartmentsService } from '../../services/apartments.service';
 })
 export class AvailableApartmentResultsComponent {
   public selectedId: string = '';
-  availableDat: AvailableApartments[] 
+  availableDat: AvailableApartments[] = []
   features: Feature[] = []
-  
  
+  removeApartmentId!: number
 
-  constructor(private apartmentsService: ApartmentsService, private mapService: MapService) {
-   this.availableDat = this.apartmentsService.getSmartApartmentDataPlaces()
-   console.log('data', this.availableDat);
+  constructor(private apartmentsService: ApartmentsService, private mapService: MapService, private apartmentMarkerService: ApartmentsMarkerService) {
    
    }
 
-  // getApartmentData() {
-  //   apartmentData!: Feature[] = this.homeData.
-  // }
-
+ 
   get isLoadingApartments(): boolean {
     return this.apartmentsService.isLoadingApartments;
    }
  
+   get apartments(): Feature[] {
+    // this.apartmentsService.apartmentChanged.subscribe((res: Feature[])  =>{
+    //   this.apartmentsService.apartments = res
+    // })
+    return this.apartmentsService.apartments;
+  }
 
-  // get apartments(): Feature[] {
-   
-  //   return this.apartmentsService.apartments;
-  // }
 
   flyTo(apartment: Feature) {
     this.selectedId = apartment.id
     const [lng, lat] = apartment.properties.bbox;
     this.mapService.flyTo([lng, lat]);
+  }
+
+  addApartmentMarker() {
+
+  }
+
+  removeApartmentMarker(apartmentId: number){
+  this.apartmentsService.removeApartmentData(apartmentId)
+  
+   
   }
 
 }
