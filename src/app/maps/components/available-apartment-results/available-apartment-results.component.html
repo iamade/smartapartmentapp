@@ -27,7 +27,7 @@ class="alert alert primary mt-2 text-center">
         class="btn btn-sm "
         [ngClass]="(apartment.id === selectedId) ? 'btn-outline-light':'btn-outline-primary' "
         >
-    Directions
+    {{apartment.properties.stateCode}}
     </button>
     </li>
   </ng-template>

@@ -18,21 +18,14 @@ class="alert alert primary mt-2 text-center">
             {{place.place_name}}
         </p>
 
-        <!-- <div class="bottom-btn">
+        <div class="bottom-btn">
           <button 
           class="btn btn-sm"
-          [ngClass]="(place.id === selectedId) ? 'btn-outline-light':'btn-outline-primary' "
-          >
-      Directions
+          [ngClass]="(place.id === selectedId) ? 'btn-outline-light':'btn-outline-primary' ">
+          
+      {{place.center}}
       </button>
-          <button 
-          class="btn btn-sm"
-          [ngClass]="(place.id === selectedId) ? 'btn-outline-light':'btn-outline-primary' "
-          (click)="addToAvailable(place)"
-          >
-         Add
-      </button>
-        </div> -->
+         </div>
        
     </li>
 </ul>

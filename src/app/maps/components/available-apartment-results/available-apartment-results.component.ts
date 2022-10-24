@@ -30,9 +30,7 @@ export class AvailableApartmentResultsComponent {
    }
  
    get apartments(): Feature[] {
-    // this.apartmentsService.apartmentChanged.subscribe((res: Feature[])  =>{
-    //   this.apartmentsService.apartments = res
-    // })
+  
     return this.apartmentsService.apartments;
   }
 
@@ -41,10 +39,6 @@ export class AvailableApartmentResultsComponent {
     this.selectedId = apartment.id
     const [lng, lat] = apartment.properties.bbox;
     this.mapService.flyTo([lng, lat]);
-  }
-
-  addApartmentMarker() {
-
   }
 
   removeApartmentMarker(apartmentId: number){
