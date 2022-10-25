@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApartmentsService, MapService, PlacesService } from '../../services';
-import { ApartmentsMarkerService } from '../../services/apartments-marker.service';
+
 
 @Component({
   selector: 'app-search-bar',
@@ -11,8 +11,8 @@ export class SearchBarComponent {
  displaySearchResult: boolean = false
  displayAvailableApartment: boolean =false
   private debounceTimer?: NodeJS.Timeout
-  constructor(private placeService: PlacesService, private apartmentService: ApartmentsService, private mapService: MapService,
-              private apartmentsMarkerService: ApartmentsMarkerService) { }
+  constructor(private placeService: PlacesService, private apartmentService: ApartmentsService
+            ) { }
 
   ngOnInit(): void {
   }
@@ -24,7 +24,7 @@ export class SearchBarComponent {
     this.debounceTimer = setTimeout(() => {
       
       this.placeService.getPlacesByQuery(query)
-      this.apartmentsMarkerService.removeMarkersFromApartmenets()
+      this.apartmentService.removeMarkersFromApartmenets()
       
       
     }, 350)

@@ -3,7 +3,7 @@ import { throws } from 'assert';
 import { Subject } from 'rxjs';
 import { AvailableApartments, Feature } from '../../interfaces/available-apartments';
 import { MapService } from '../../services';
-import { ApartmentsMarkerService } from '../../services/apartments-marker.service';
+
 import { ApartmentsService } from '../../services/apartments.service';
 
 
@@ -20,7 +20,7 @@ export class AvailableApartmentResultsComponent {
  
   removeApartmentId!: number
 
-  constructor(private apartmentsService: ApartmentsService, private mapService: MapService, private apartmentMarkerService: ApartmentsMarkerService) {
+  constructor(private apartmentsService: ApartmentsService, private mapService: MapService,  ) {
    
    }
 
